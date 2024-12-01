@@ -1,0 +1,242 @@
+/* variáveis de cores e fontes */
+:root {
+    --primary-color: #8C1533;
+    --primary-hover-color: #5e1024;
+    --secondary-color: #6c757d;
+    --background-color: #f9f9f9;
+    --font-family: "Poppins", sans-serif;
+}
+
+/* estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family); /* aplica a fonte definida */
+    background: linear-gradient(to right, rgba(249, 249, 249, 0.9), rgba(226, 226, 226, 0.9)), /* gradiente de fundo */
+                url('images/pucpr-logo.png') no-repeat left bottom; /* logo no canto inferior esquerdo */
+    background-size: 200px auto;
+    background-position: left bottom;
+}
+
+.container {
+    background: #ffffff; /* fundo branco para o formulário */
+    width: 450px;
+    padding: 2rem;
+    margin: 50px auto;
+    border-radius: 10px; /* bordas arredondadas */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* sombra suave ao redor do formulário */
+}
+
+/* titulo do formulário */
+.form-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--primary-color); /* cor do título */
+    margin-bottom: 1rem;
+}
+
+/* Estilo do formulário */
+form {
+    margin: 0 2rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color); /* cor do ícone */
+}
+
+input {
+    width: 100%;
+    padding: 10px 10px 10px 40px; /* espaço para o ícone dentro do input */
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #495057;
+    transition: border-color 0.3s; /* transição suave na mudança de borda */
+}
+
+input:focus {
+    border-color: var(--primary-color); /* muda a cor da borda ao focar */
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--secondary-color); /* cor do placeholder */
+    font-size: 0.9rem;
+}
+
+label {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 14px;
+    color: var(--secondary-color); /* cor do label */
+    transition: 0.3s;
+    background: transparent;
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: var(--primary-color); /* cor do label quando o input está focado */
+    background: #ffffff;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+/* Link de recuperação */
+.recover {
+    text-align: right;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.recover a {
+    text-decoration: none;
+    color: var(--primary-color); /* cor do link de recuperação */
+}
+
+.recover a:hover {
+    text-decoration: underline;
+}
+
+/* Botão */
+.btn {
+    font-size: 1.1rem;
+    padding: 10px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 100%;
+    background: var(--primary-color); /* cor de fundo do botão */
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: var(--primary-hover-color); /* cor do botão ao passar o mouse */
+}
+
+/* Separador */
+.or {
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+/* Ícones */
+.icons {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.icons i {
+    color: var(--primary-color); /* cor dos ícones */
+    margin: 0 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.icons i:hover {
+    color: var(--primary-hover-color); 
+}
+
+/* Links adicionais */
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    gap: 10px; 
+    font-size: 1rem;
+}
+
+.links p {
+    margin: 0; 
+}
+
+.links button {
+    background: none;
+    border: none;
+    color: var(--primary-color); /* cor do botão de links */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.links button:hover {
+    text-decoration: underline;
+    color: white; 
+}
+
+
+input:focus, .btn:focus {
+    outline: 2px solid var(--primary-color); 
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .form-title {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 8px 0;
+    }
+}
+
+form {
+    margin: 1rem auto;
+    text-align: center;
+}
+
+select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--primary-hover-color);
+}

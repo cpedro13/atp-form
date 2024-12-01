@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro & Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: url('http://localhost/atp-form/images/pucpr-logo.png') no-repeat left bottom; 
+             background-size: 400px; 
+             background-color: #f9f9f9; 
+             font-family: 'Poppins', sans-serif; 
+             opacity: 0.9;"> <!-- fundo com imagem e configurações globais -->
+
+    <div class="container" id="signup" style="display:none;"> <!-- formulário de cadastro inicialmente oculto -->
+      <h1 class="form-title">Cadastrar</h1>
+      <form method="post" action="register.php"> <!-- ação para registro no back-end -->
+        <div class="input-group"> <!-- campo de entrada com ícone -->
+           <i class="fas fa-user"></i>
+           <input type="text" name="fName" id="fName" required>
+           <label for="fName">Nome</label>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" name="lName" id="lName" required>
+            <label for="lName">Sobrenome</label>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" id="email" required>
+            <label for="email">E-mail</label>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="password" id="password" required>
+            <label for="password">Senha</label>
+        </div>
+       <input type="submit" class="btn" value="Cadastrar" name="signUp"> <!-- botão de cadastro -->
+      </form>
+      <p class="or">
+        ----------ou-------- <!-- separador visual -->
+      </p>
+      <div class="icons"> <!-- login com redes sociais -->
+        <i class="fab fa-google"></i>
+        <i class="fab fa-facebook"></i>
+      </div>
+      <div class="links"> <!-- alternar para formulário de login -->
+        <p>Já tem uma conta?</p>
+        <button id="signInButton">Entrar</button>
+      </div>
+    </div>
+
+    <div class="container" id="signIn"> <!-- formulário de login -->
+        <h1 class="form-title">Entrar</h1>
+        <form method="post" action="register.php"> <!-- ação para login no back-end -->
+          <div class="input-group">
+              <i class="fas fa-envelope"></i>
+              <input type="email" name="email" id="email" required>
+              <label for="email">E-mail</label>
+          </div>
+          <div class="input-group">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="password" id="password" required>
+              <label for="password">Senha</label>
+          </div>
+          <p class="recover">
+            <a href="#">Recuperar Senha</a> <!-- link para recuperação de senha -->
+          </p>
+         <input type="submit" class="btn" value="Entrar" name="signIn"> <!-- botão de login -->
+        </form>
+        <p class="or">
+          ----------ou--------
+        </p>
+        <div class="icons"> <!-- login com redes sociais -->
+          <i class="fab fa-google"></i>
+          <i class="fab fa-facebook"></i>
+        </div>
+        <div class="links"> <!-- alternar para formulário de cadastro -->
+          <p>Ainda não tem uma conta? </p>
+          <button id="signUpButton"> Cadastre-se</button>
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- script para alternar entre os formulários -->
+</body>
+</html>
+
+
+
+
